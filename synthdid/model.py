@@ -314,6 +314,9 @@ class SynthDID(Optimize, Plot, Variance, Summary):
         self.sc_se = np.sqrt(sc_var)
         self.did_se = np.sqrt(did_var)
 
+    def run_placebo(self, replications=200):
+        self.result_placebo = self.permute(replications=replications)
+
 
 if __name__ == "__main__":
     from sample_data import fetch_CaliforniaSmoking
